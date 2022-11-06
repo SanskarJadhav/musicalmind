@@ -11,8 +11,7 @@ import numpy as np
 # In[26]:
 
 
-url = "https://drive.google.com/file/d/1iIJ9JL3vAMEvvNgVyW36CTf_vzL7SBnJ/view?usp=share_link"
-url='https://drive.google.com/uc?id=' + url.split('/')[-2]
+url = 'https://raw.githubusercontent.com/SanskarJadhav/musicalmind/main/musicdata.csv'
 df = pd.read_csv(url)
 
 
