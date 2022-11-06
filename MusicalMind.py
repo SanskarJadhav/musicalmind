@@ -12,8 +12,8 @@ import numpy as np
 
 
 url = "https://drive.google.com/file/d/1iIJ9JL3vAMEvvNgVyW36CTf_vzL7SBnJ/view?usp=share_link"
-path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
-df = pd.read_csv(path)
+url='https://drive.google.com/uc?id=' + url.split('/')[-2]
+df = pd.read_csv(url)
 
 
 # In[27]:
