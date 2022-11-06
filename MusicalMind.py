@@ -36,7 +36,6 @@ def make_clickable(val):
 # In[29]:
 
 
-from tqdm import tqdm
 def get_recommendations(df, song_name, artist_name, amount):
     distances = []
     #choosing the data for our song
@@ -45,7 +44,7 @@ def get_recommendations(df, song_name, artist_name, amount):
     ind = row.index[0]
     #dropping the data with our song
     res_data = df.drop(ind)
-    for r_song in tqdm(res_data.values):
+    for r_song in res_data.values:
         dist = 0
         for col in np.arange(len(res_data.columns)):
             #indeces of non-numerical columns
