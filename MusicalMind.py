@@ -11,7 +11,7 @@ import numpy as np
 # In[26]:
 
 
-url = 'https://raw.githubusercontent.com/SanskarJadhav/musicalmind/main/updatedmusic.csv'
+url = 'https://raw.githubusercontent.com/SanskarJadhav/musicalmind/main/datamusic.csv'
 df = pd.read_csv(url)
 
 
