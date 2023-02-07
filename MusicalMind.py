@@ -59,7 +59,9 @@ def get_recommendations(df, song_name, artist_name, amount):
     return res_data[columns][:amount]
 
 def get_song(df, song_name, artist_name):
-    return df.loc[(df.Song == song_name) & (df.Performer == artist_name)].head(1)
+    res_data = df.drop(ind)
+    res_data['Audio Track'] = res_data['Audio Track'].apply(make_clickable)
+    return res_data.loc[(res_data.Song == song_name) & (res_data.Performer == artist_name)].head(1)
 
 # In[30]:
 
