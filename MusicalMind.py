@@ -100,7 +100,7 @@ with col2:
         tk = 1
 
 if tk == 1:
-    st.markdown('Song Details of ' + song_name ':')
+    st.markdown('Song Details of ' + song_name + ':')
     pre = st.empty()
     predf = get_song(df, song_name, artist_name)
     predf.reset_index(drop=True, inplace = True)
