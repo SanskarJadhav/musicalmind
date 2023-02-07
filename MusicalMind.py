@@ -114,7 +114,6 @@ if tk == 1:
     if songid:
         predf = predf.loc[:,['Song', 'Performer', 'Audio Track']]
         pre = st.write(predf.to_html(escape = False), unsafe_allow_html = True)
-        st.write('\n')
         st.markdown('Recommending songs similar to '+ song_name + " by " + artist_name)
         recdf = recdf.loc[:,['Song', 'Performer', 'Audio Track']]
         rec = st.write(recdf.to_html(escape = False), unsafe_allow_html = True)
