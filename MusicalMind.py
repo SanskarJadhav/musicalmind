@@ -61,7 +61,9 @@ def get_recommendations(df, song_name, artist_name, amount):
 def get_song(df, song_name, artist_name):
     pes_data = df.copy()
     pes_data['Audio Track'] = pes_data['Audio Track'].apply(make_clickable)
-    return pes_data.loc[(pes_data.Song == song_name) & (pes_data.Performer == artist_name)]['Song', 'Album', 'Performer', 'Genre', 'Popularity', 'Audio Track'][:1]
+    new_df = pes_data.loc[(pes_data.Song == song_name) & (pes_data.Performer == artist_name)].head(1)
+    return new_df[['Song', 'Album', 'Performer', 'Genre', 'Popularity', 'Audio Track']]
+    
 
 # In[30]:
 
