@@ -58,6 +58,8 @@ def get_recommendations(df, song_name, artist_name, amount):
     columns=['Song', 'Album', 'Performer', 'Genre', 'Popularity', 'Audio Track']
     return res_data[columns][:amount]
 
+  def get_song(df, song_name, artist_name):
+    return df.loc[(df.Song == song_name) & (df.Performer == artist_name)].head(1)
 
 # In[30]:
 
@@ -98,14 +100,23 @@ with col2:
         tk = 1
 
 if tk == 1:
+    st.markdown('Song Details of ' + song_name ':')
+    pre = st.empty()
+    predf = get_song(df, song_name, artist_name)
+    predf.reset_index(drop=True, inplace = True)
     st.markdown('Recommending songs similar to '+ song_name + " by " + artist_name)
     rec = st.empty()
     recdf = get_recommendations(df, song_name, artist_name, numrec)
     recdf.reset_index(drop=True, inplace=True)
     if songid:
+        predf = predf.loc[:,['Song', 'Performer', 'Audio Track']]
+        pre = st.write(predf.to_html(escape = False), unsafe_allow_html = True)
         recdf = recdf.loc[:,['Song', 'Performer', 'Audio Track']]
         rec = st.write(recdf.to_html(escape = False), unsafe_allow_html = True)
     else:
+        predf = predf.iloc[:,:-1]
+        pre = st.dataframe(predf)
         recdf = recdf.iloc[:,:-1]
         rec = st.dataframe(recdf)
+        
 
