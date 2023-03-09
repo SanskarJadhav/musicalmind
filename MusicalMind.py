@@ -112,6 +112,7 @@ if tk == 1:
     rec = st.empty()
     recdf = get_recommendations(df, song_name, artist_name, numrec)
     recdf.reset_index(drop=True, inplace=True)
+    st.write(os.getcwd)
     if songid:
         predf = predf.loc[:,['Song', 'Performer', 'Audio Track']]
         pre = st.write(predf.to_html(escape = False), unsafe_allow_html = True)
@@ -125,6 +126,5 @@ if tk == 1:
         st.markdown('Recommending songs similar to '+ song_name + " by " + artist_name)
         recdf = recdf.iloc[:,:-1]
         rec = st.dataframe(recdf)
-    st.write(os.getcwd)
         
 
