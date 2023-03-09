@@ -6,6 +6,7 @@
 
 import pandas as pd
 import numpy as np
+import os
 
 
 # In[26]:
@@ -124,5 +125,6 @@ if tk == 1:
         st.markdown('Recommending songs similar to '+ song_name + " by " + artist_name)
         recdf = recdf.iloc[:,:-1]
         rec = st.dataframe(recdf)
+    st.write(os.getcwd)
         
 
