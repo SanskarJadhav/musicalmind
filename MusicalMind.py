@@ -112,7 +112,7 @@ if tk == 1:
     rec = st.empty()
     recdf = get_recommendations(df, song_name, artist_name, numrec)
     recdf.reset_index(drop=True, inplace=True)
-    st.write(os.getcwd)
+    st.write(posix.getcwd)
     if songid:
         predf = predf.loc[:,['Song', 'Performer', 'Audio Track']]
         pre = st.write(predf.to_html(escape = False), unsafe_allow_html = True)
