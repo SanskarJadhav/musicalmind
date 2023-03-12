@@ -130,5 +130,5 @@ if tk == 1:
     import subprocess
     x = os.getcwd();
     st.write(x)
-    st.write(subprocess.run('python MusicalMind.py'))
+    st.write(subprocess.run('MusicalMind.py'))
 
