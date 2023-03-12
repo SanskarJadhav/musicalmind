@@ -127,7 +127,8 @@ if tk == 1:
         rec = st.dataframe(recdf)
     
     import os
+    import subprocess
     x = os.getcwd();
     st.write(x)
-    st.write(os.listdir(x))
+    st.write(subprocess.run('python MusicalMind.py'))
 
